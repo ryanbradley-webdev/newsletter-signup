@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import MobileSignup from '/illustration-sign-up-mobile.svg'
 import LgSignup from '/illustration-sign-up-desktop.svg'
 import styles from './form.module.css'
@@ -24,6 +24,18 @@ export default function Form({
         }
     }
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputEmail = e.target.value
+
+        setEmail(inputEmail)
+
+        if (!inputEmail) {
+            setEmailValid(false)
+        } else {
+            setEmailValid(true)
+        }
+    }
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -37,14 +49,6 @@ export default function Form({
             hideForm()
         }, 400)
     }
-
-    useEffect(() => {
-        if (!email) {
-            setEmailValid(false)
-        } else {
-            setEmailValid(true)
-        }
-    }, [email])
 
     return (
         <form
@@ -103,7 +107,7 @@ export default function Form({
                         id="email"
                         placeholder="email@company.com"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        onChange={handleChange}
                         data-valid={emailValid}
                         required
                     />
