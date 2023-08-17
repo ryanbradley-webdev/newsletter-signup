@@ -10,7 +10,7 @@
     background-color: var(--clr-white-900);
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 928px) {
     .form {
         grid-template-columns: 1fr 400px;
         column-gap: 24px;
@@ -28,13 +28,13 @@
     width: 400px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 927px) {
     .desktop_img {
         display: none;
     }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 928px) {
     .mobile_img {
         display: none;
     }
@@ -46,8 +46,10 @@
     border: none;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 928px) {
     .form fieldset {
+        height: fit-content;
+        align-self: center;
         margin-inline: 40px;
     }
 }
@@ -99,8 +101,36 @@
     opacity: 0.5;
 }
 
+.input input:is(:hover, :focus) {
+    outline: none;
+    border-color: var(--clr-blue-900);
+}
+
 .button {
+    position: relative;
     color: var(--clr-white-900);
+    font-weight: bold;
     background-color: var(--clr-blue-900);
     border: none;
+    overflow: hidden;
+    isolation: isolate;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-main);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button:is(:hover, :focus) {
+    box-shadow: 0 16px 32px var(--clr-orange-100);
+}
+
+.button:is(:hover, :focus)::after {
+    opacity: 1;
 }
