@@ -1,0 +1,25 @@
+#root {
+    height: 100%;
+    color: var(--clr-blue-900);
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+p,
+label {
+    line-height: 150%;
+}
+
+label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+button {
+    font-family: inherit;
+
+}
