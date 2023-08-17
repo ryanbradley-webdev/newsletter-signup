@@ -19,12 +19,6 @@ export default function Form() {
                 className={styles.mobile_img}
             />
 
-            <img
-                src={LgSignup}
-                alt=''
-                className={styles.desktop_img}
-            />
-
             <fieldset>
 
                 <h1>
@@ -79,6 +73,12 @@ export default function Form() {
                 </button>
 
             </fieldset>
+
+            <img
+                src={LgSignup}
+                alt=''
+                className={styles.desktop_img}
+            />
 
         </form>
     )

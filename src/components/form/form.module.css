@@ -6,11 +6,26 @@
 
 .form {
     row-gap: 40px;
+    max-width: 480px;
+    background-color: var(--clr-white-900);
 }
 
-.mobile_img,
-.desktop_img {
+@media screen and (min-width: 481px) {
+    .form {
+        grid-template-columns: 1fr 400px;
+        column-gap: 24px;
+        max-width: 928px;
+        border-radius: 36px;
+        padding: 24px;
+    }
+}
+
+.mobile_img {
     width: 100%;
+}
+
+.desktop_img {
+    width: 400px;
 }
 
 @media screen and (max-width: 480px) {
@@ -29,6 +44,12 @@
     row-gap: 24px;
     margin-inline: 24px;
     border: none;
+}
+
+@media screen and (min-width: 480px) {
+    .form fieldset {
+        margin-inline: 40px;
+    }
 }
 
 .form ul {
