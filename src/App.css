@@ -18,6 +18,12 @@ h1 {
     font-weight: bold;
 }
 
+@media screen and (min-width: 928px) {
+    h1 {
+        font-size: 56px;
+    }
+}
+
 p,
 label {
     line-height: 150%;
@@ -34,6 +40,7 @@ button {
     width: 100%;
     color: var(--clr-white-900);
     font-family: inherit;
+    font-size: 16px;
     font-weight: bold;
     background-color: var(--clr-blue-900);
     border: none;
