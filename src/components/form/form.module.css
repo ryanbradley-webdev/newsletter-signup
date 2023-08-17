@@ -85,8 +85,7 @@
     font-size: 12px;
 }
 
-.input input,
-.button {
+.input input {
     font-family: inherit;
     height: 56px;
     border-radius: 8px;
@@ -105,33 +104,4 @@
 .input input:is(:hover, :focus) {
     outline: none;
     border-color: var(--clr-blue-900);
-}
-
-.button {
-    position: relative;
-    color: var(--clr-white-900);
-    font-weight: bold;
-    background-color: var(--clr-blue-900);
-    border: none;
-    overflow: hidden;
-    isolation: isolate;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.button::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-main);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.button:is(:hover, :focus) {
-    box-shadow: 0 16px 32px var(--clr-orange-100);
-}
-
-.button:is(:hover, :focus)::after {
-    opacity: 1;
 }

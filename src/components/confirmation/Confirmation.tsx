@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Check from '../../assets/icon-success.svg'
+import styles from './confirmation.module.css'
 
 export default function Confirmation({
     email,
@@ -23,6 +24,7 @@ export default function Confirmation({
 
     return (
         <section
+            className={styles.confirmation}
             style={{
                 opacity,
                 display

@@ -29,6 +29,35 @@ label {
 }
 
 button {
+    position: relative;
+    height: 56px;
+    width: 100%;
+    color: var(--clr-white-900);
     font-family: inherit;
+    font-weight: bold;
+    background-color: var(--clr-blue-900);
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-main);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+button:is(:hover, :focus) {
+    box-shadow: 0 16px 32px var(--clr-orange-100);
+}
+
+button:is(:hover, :focus)::after {
+    opacity: 1;
 }
