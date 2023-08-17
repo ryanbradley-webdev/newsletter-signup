@@ -5,10 +5,12 @@ import styles from './form.module.css'
 
 export default function Form({
     email,
-    setEmail
+    setEmail,
+    hideForm
 }: {
     email: string
     setEmail: Dispatch<SetStateAction<string>>
+    hideForm: () => void
 }) {
     const [opacity, setOpacity] = useState('1')
     const [display, setDisplay] = useState('')
@@ -21,6 +23,10 @@ export default function Form({
         setTimeout(() => {
             setDisplay('none')
         }, 350)
+
+        setTimeout(() => {
+            hideForm()
+        }, 400)
     }
 
     return (
