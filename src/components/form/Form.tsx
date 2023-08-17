@@ -1,16 +1,36 @@
+import { Dispatch, SetStateAction, useState } from 'react'
 import MobileSignup from '/illustration-sign-up-mobile.svg'
 import LgSignup from '/illustration-sign-up-desktop.svg'
 import styles from './form.module.css'
 
-export default function Form() {
+export default function Form({
+    email,
+    setEmail
+}: {
+    email: string
+    setEmail: Dispatch<SetStateAction<string>>
+}) {
+    const [opacity, setOpacity] = useState('1')
+    const [display, setDisplay] = useState('')
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        setOpacity('0')
+
+        setTimeout(() => {
+            setDisplay('none')
+        }, 350)
     }
 
     return (
         <form
             onSubmit={handleSubmit}
             className={styles.form}
+            style={{
+                opacity,
+                display
+            }}
         >
             
             <img
@@ -59,6 +79,8 @@ export default function Form() {
                         name="email"
                         id="email"
                         placeholder="email@company.com"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                         required
                     />
 
