@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import MobileSignup from '/illustration-sign-up-mobile.svg'
 import LgSignup from '/illustration-sign-up-desktop.svg'
 import styles from './form.module.css'
@@ -14,6 +14,15 @@ export default function Form({
 }) {
     const [opacity, setOpacity] = useState('1')
     const [display, setDisplay] = useState('')
+    const [emailValid, setEmailValid] = useState(true)
+
+    const validateEmail = () => {
+        if (!email.includes('@') || !email.includes('.') || email.indexOf('@') > email.indexOf('.')) {
+            return setEmailValid(false)
+        } else {
+            setEmailValid(true)
+        }
+    }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -28,6 +37,14 @@ export default function Form({
             hideForm()
         }, 400)
     }
+
+    useEffect(() => {
+        if (!email) {
+            setEmailValid(false)
+        } else {
+            setEmailValid(true)
+        }
+    }, [email])
 
     return (
         <form
@@ -87,6 +104,7 @@ export default function Form({
                         placeholder="email@company.com"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
+                        data-valid={emailValid}
                         required
                     />
 
@@ -94,6 +112,7 @@ export default function Form({
 
                 <button
                     className={styles.button}
+                    onClick={validateEmail}
                 >
 
                     Subscribe to monthly newsletter

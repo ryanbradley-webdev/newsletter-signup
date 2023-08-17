@@ -78,7 +78,18 @@
 }
 
 .input {
+    position: relative;
     row-gap: 8px;
+}
+
+.input:has(input[data-valid='false'])::after {
+    content: 'Valid email required';
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--clr-orange-600);
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .input span {
@@ -86,14 +97,16 @@
 }
 
 .input input {
-    font-family: inherit;
     height: 56px;
-    border-radius: 8px;
-}
-
-.input input {
     padding-inline: 24px;
     border: 1px solid var(--clr-grey-100);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.input input[data-valid='false'] {
+    color: var(--clr-orange-600);
+    background-color: var(--clr-orange-100);
 }
 
 .input input::placeholder {
@@ -104,4 +117,8 @@
 .input input:is(:hover, :focus) {
     outline: none;
     border-color: var(--clr-blue-900);
+}
+
+.input input[data-valid='false']:is(:hover, :focus) {
+    border-color: var(--clr-orange-600);
 }

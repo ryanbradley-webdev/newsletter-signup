@@ -6,7 +6,8 @@
   --clr-blue-600: #36384D;
   --clr-blue-900: #242742;
   --clr-orange-600: #FF6155;
-  --clr-orange-100: #ff625780;
+  --clr-orange-300: #ff625780;
+  --clr-orange-100: #ff625726;
   --clr-purple-600: #FF527B;
   --gradient-main: linear-gradient(to bottom, var(--clr-orange-600), var(--clr-purple-600));
 }
