@@ -1,4 +1,6 @@
-
+import MobileSignup from '/illustration-sign-up-mobile.svg'
+import LgSignup from '/illustration-sign-up-desktop.svg'
+import styles from './form.module.css'
 
 export default function Form() {
     const handleSubmit = (e: React.FormEvent) => {
@@ -8,9 +10,20 @@ export default function Form() {
     return (
         <form
             onSubmit={handleSubmit}
+            className={styles.form}
         >
             
-            <img />
+            <img
+                src={MobileSignup}
+                alt=''
+                className={styles.mobile_img}
+            />
+
+            <img
+                src={LgSignup}
+                alt=''
+                className={styles.desktop_img}
+            />
 
             <fieldset>
 
@@ -38,7 +51,10 @@ export default function Form() {
 
                 </ul>
 
-                <label htmlFor="email">
+                <label
+                    htmlFor="email"
+                    className={styles.input}
+                >
 
                     <span>
                         Email address
@@ -54,7 +70,9 @@ export default function Form() {
 
                 </label>
 
-                <button>
+                <button
+                    className={styles.button}
+                >
 
                     Subscribe to monthly newsletter
                     

@@ -1,0 +1,85 @@
+.form,
+.form fieldset,
+.input {
+    display: grid;
+}
+
+.form {
+    row-gap: 40px;
+}
+
+.mobile_img,
+.desktop_img {
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .desktop_img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .mobile_img {
+        display: none;
+    }
+}
+
+.form fieldset {
+    row-gap: 24px;
+    margin-inline: 24px;
+    border: none;
+}
+
+.form ul {
+    margin-bottom: 16px;
+    list-style: none;
+}
+
+.form li {
+    position: relative;
+    line-height: 150%;
+    margin-left: 37px;
+}
+
+.form li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.form li::before {
+    content: url('../../assets/icon-list.svg');
+    position: absolute;
+    top: 0;
+    left: -37px;
+}
+
+.input {
+    row-gap: 8px;
+}
+
+.input span {
+    font-size: 12px;
+}
+
+.input input,
+.button {
+    font-family: inherit;
+    height: 56px;
+    border-radius: 8px;
+}
+
+.input input {
+    padding-inline: 24px;
+    border: 1px solid var(--clr-grey-100);
+}
+
+.input input::placeholder {
+    color: var(--clr-blue-900);
+    opacity: 0.5;
+}
+
+.button {
+    color: var(--clr-white-900);
+    background-color: var(--clr-blue-900);
+    border: none;
+}
