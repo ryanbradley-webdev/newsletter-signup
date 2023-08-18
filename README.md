@@ -62,4 +62,4 @@ My method of form validation is continuing to evolve. As my technique improves, 
 
 - Portfolio - [ryanbradleyportfolio.com](https://ryanbradleyportfolio.com)
 - Frontend Mentor - [@ryanbradley-webdev](https://www.frontendmentor.io/profile/ryanbradley-webdev)
-- Instagram - [@yourusername](https://www.instagram.com/ryanbradley_web_dev/)
+- Instagram - [@ryanbradley_web_dev](https://www.instagram.com/ryanbradley_web_dev/)
